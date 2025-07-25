@@ -14,8 +14,8 @@ const App = () => {
     const ctx = canvas.getContext("2d");
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
-    ctx.globalAlpha = lineColor;
-    ctx.styleStroke = lineOpacity;
+    ctx.strokeStyle = lineColor;
+    ctx.globalAlpha = lineOpacity;
     ctx.lineWidth = lineWidth;
     ctxRef.current = ctx;
   }, [lineColor, lineOpacity, lineWidth]);
@@ -51,7 +51,7 @@ const App = () => {
           <canvas 
          onMouseDown ={startDrawing}
          onMouseUp = {endDrawing}
-         onMouseOver = {draw}
+         onMouseMove = {draw}
          ref={canvaRef}
          width={`1280px`}
          height={`720px`}
@@ -60,6 +60,6 @@ const App = () => {
       </div>
     </div>
   );
-};
-
+}
 export default App;
+
